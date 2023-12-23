@@ -19,11 +19,11 @@ import java.util.List;
 public class SmartDocument implements Document {
     private String gcsPath;
 
-    public String getGcsPath() {
+    public String getgcsPath() {
         return gcsPath;
     }
 
-    public void setGcsPath(String gcsPath) {
+    public void setgcsPath(String gcsPath) {
         this.gcsPath = gcsPath;
     }
 
@@ -42,12 +42,12 @@ public class SmartDocument implements Document {
                 addFeatures(feat).setImage(img).build();
         requests.add(request);
 
-        try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
-            BatchAnnotateImagesResponse response = client.
+        try (ImageAnnotatorClient clientG = ImageAnnotatorClient.create()) {
+            BatchAnnotateImagesResponse response = clientG.
             batchAnnotateImages(requests);
             List<AnnotateImageResponse> responses = response.
             getResponsesList();
-            client.close();
+            clientG.close();
 
             for (AnnotateImageResponse res : responses) {
                 TextAnnotation annotation = res.getFullTextAnnotation();
