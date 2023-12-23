@@ -93,7 +93,7 @@
         <module name="MagicNumber">
             <property name="tokens"
                       value="NUM_DOUBLE, NUM_FLOAT, NUM_INT, NUM_LONG"/>
-            <property name="ignoreNumbers" value="0, 1, 2, 100, 11.5, 15, 30, 40, 4, 13"/>
+            <property name="ignoreNumbers" value="-1, 0, 0.5, 1, 2"/>
             <property name="ignoreHashCodeMethod" value="true"/>
         </module>
         <module name="MissingSwitchDefault"/>
@@ -154,7 +154,7 @@
 
         <module name="IllegalImport">
             <property name="illegalPkgs"
-                      value="sun, java.net, java.security, javax, java.applet, java.beans, java.nio, java.rmi, java.text, java.lang.reflect, java.lang.instrument"/>
+                      value="java.sql, sun, java.net, java.security, javax, java.applet, java.beans, java.nio, java.rmi, java.text, java.lang.reflect, java.lang.instrument"/>
         </module>
 
         <module name="RedundantImport"/>
