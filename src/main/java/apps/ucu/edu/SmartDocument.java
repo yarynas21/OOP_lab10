@@ -23,8 +23,8 @@ public class SmartDocument implements Document {
         return gcsPath;
     }
 
-    public void setGcsPath(String gcsPath) {
-        this.gcsPath = gcsPath;
+    public void setGcsPath(String newgcsPath) {
+        this.gcsPath = newgcsPath;
     }
 
     @SneakyThrows
