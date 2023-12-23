@@ -1,7 +1,7 @@
 package apps.ucu.edu;
 
 public class TimedDocument implements Document {
-    Document document;
+    private final Document document;
     public TimedDocument(Document document) {
         this.document = document;
     }
