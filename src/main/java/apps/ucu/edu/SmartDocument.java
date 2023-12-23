@@ -17,14 +17,14 @@ import java.util.List;
 
 @AllArgsConstructor
 public class SmartDocument implements Document {
-    private String GcsPath;
+    private String gcsPath;
 
     public String getGcsPath() {
-        return GcsPath;
+        return gcsPath;
     }
 
     public void setGcsPath(String GcsPath) {
-        this.GcsPath = GcsPath;
+        this.gcsPath = GcsPath;
     }
 
     @SneakyThrows
@@ -32,7 +32,7 @@ public class SmartDocument implements Document {
         List<AnnotateImageRequest> requests = new ArrayList<>();
 
         ImageSource imgSource = ImageSource.newBuilder().
-        setGcsImageUri(GcsPath).build();
+        setGcsImageUri(gcsPath).build();
         Image img = Image.newBuilder().
         setSource(imgSource).build();
         Feature feat = Feature.newBuilder().
@@ -42,12 +42,12 @@ public class SmartDocument implements Document {
                 addFeatures(feat).setImage(img).build();
         requests.add(request);
 
-        try (ImageAnnotatorClient ClientG = ImageAnnotatorClient.create()) {
-            BatchAnnotateImagesResponse response = ClientG.
+        try (ImageAnnotatorClient CLIENT = ImageAnnotatorClient.create()) {
+            BatchAnnotateImagesResponse response = CLIENT.
             batchAnnotateImages(requests);
             List<AnnotateImageResponse> responses = response.
             getResponsesList();
-            ClientG.close();
+            CLIENT.close();
 
             for (AnnotateImageResponse res : responses) {
                 TextAnnotation annotation = res.getFullTextAnnotation();
