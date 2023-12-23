@@ -1,1 +1,1 @@
-<img src="[https://github.com/yarynas21/map/blob/main/launch.png](https://github.com/yarynas21/OOP_lab10/blob/90e14484861d918de6db4f5a941a0b5df2dae444/lab10_photos.png)https://github.com/yarynas21/OOP_lab10/blob/90e14484861d918de6db4f5a941a0b5df2dae444/lab10_photos.png" alt="my image" width="500">
+<img src="lab10_photos.png" alt="my image" width="500">
